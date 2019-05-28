@@ -1,10 +1,7 @@
-FROM ubuntu:bionic
+FROM ubuntu:xenial
 MAINTAINER monkey-company <contact@themonkey.co>
 
-RUN apt-get -y install gnupg2
-
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927 && \
-     echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-3.2.list && \
+RUN echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-3.2.list && \
      apt-get update && \
      apt-get -y install curl ca-certificates mongodb-org supervisor --no-install-recommends && \
      curl -sL https://deb.nodesource.com/setup_4.x | bash - && \
