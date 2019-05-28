@@ -3,9 +3,9 @@ MAINTAINER monkey-company <contact@themonkey.co>
 
 RUN echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-3.2.list && \
      apt-get update && \
-     apt-get -y install curl ca-certificates mongodb-org supervisor --no-install-recommends && \
+     apt-get -y install curl ca-certificates mongodb-org supervisor --no-install-recommends --allow-unauthenticated && \
      curl -sL https://deb.nodesource.com/setup_4.x | bash - && \
-     apt-get -y install nodejs --no-install-recommends && \
+     apt-get -y install nodejs --no-install-recommends --allow-unauthenticated && \
      apt-get clean && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
 RUN curl -SLf "https://rocket.chat/releases/latest/download" -o /tmp/rocket.chat.tgz && \
