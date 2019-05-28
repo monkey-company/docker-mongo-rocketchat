@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:bionic
 MAINTAINER monkey-company <contact@themonkey.co>
 
 RUN apt-get -y install gnupg
