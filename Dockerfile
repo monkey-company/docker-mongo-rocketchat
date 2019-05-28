@@ -1,5 +1,7 @@
 FROM ubuntu
-MAINTAINER naou <monaou@gmail.com>
+MAINTAINER monkey-company <contact@themonkey.co>
+
+RUN apt-get install gnupg
 
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927 && \
      echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-3.2.list && \
